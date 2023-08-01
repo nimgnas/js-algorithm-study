@@ -1,15 +1,5 @@
 function solution(numbers, k) {
-  var answer = 0;
-
-  for (let cnt = 1; cnt < k; cnt++) {
-    const [a, b] = numbers;
-
-    numbers.shift();
-    numbers.shift();
-
-    numbers.push(a);
-    numbers.push(b);
-  }
-
-  return (answer = numbers[0]);
+    const numbersLength = numbers.length
+    const basicIdx = ((2*k-1) % numbersLength)-1
+    return basicIdx === -1 ? numbers[numbersLength - 1] : numbers[basicIdx];
 }
