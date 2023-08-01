@@ -1,12 +1,16 @@
 function solution(chicken) {
-  var answer = 0;
-
-  while (chicken >= 10) {
-    const na = chicken % 10;
-    chicken = Math.floor(chicken / 10);
-    answer += chicken;
-
-    chicken = na + chicken;
-  }
-  return answer;
+    
+    if (chicken < 10){
+        return 0
+    }
+    
+    let coupon = chicken;
+    let serviceChicken = 0;
+    
+    while (coupon >= 10){
+        coupon -= 9
+        serviceChicken += 1
+    }
+    
+    return serviceChicken;
 }
