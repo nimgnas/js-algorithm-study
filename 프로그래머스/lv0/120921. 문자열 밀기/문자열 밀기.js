@@ -101,3 +101,6 @@ function solution(A, B) {
   '메모리 표준 편차: 11.857'
   
   ```;
+
+// 우수 코드
+let solution = (a, b) => (b + b).indexOf(a);
