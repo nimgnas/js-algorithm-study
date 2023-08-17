@@ -34,3 +34,30 @@ function solution(s) {
 '시간 표준 편차: 30573.058'
 '메모리 표준 편차: 20.167'
 ```;
+
+function solution(s) {
+  let answer = 0;
+  let x = s[0];
+  let [xCount, notXCount] = [0, 0];
+
+  for (let i = 0; i < s.length; i++) {
+    s[i] === x ? (xCount += 1) : (notXCount += 1);
+    if (xCount === notXCount) {
+      answer += 1;
+      x = s[i + 1];
+      [xCount, notXCount] = [0, 0];
+    }
+  }
+  return xCount != notXCount ? answer + 1 : answer;
+}
+
+```
+'평균 시간: 1.445ms'
+'평균 메모리: 34.233MB'
+'최고 시간: 9.91ms'
+'최저 시간: 0.06ms'
+'최고 메모리: 37.6MB'
+'최저 메모리: 33.5MB'
+'시간 표준 편차: 33.122'
+'메모리 표준 편차: 15.402'
+```;
