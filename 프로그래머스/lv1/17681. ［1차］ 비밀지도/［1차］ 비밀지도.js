@@ -1,17 +1,10 @@
 function nToSecretMap(row, n)  {
     let secretMap = row.toString(2).split('').map(ele => ele === '0' ? ' ' : '#')
-    while (secretMap.length < n){
-        secretMap.unshift(' ')
-    }
-    return secretMap.join('')
+    return secretMap.join('').padStart(n, ' ')
 }
 
 
 
 function solution(n, arr1, arr2) {
-    var answer = [];
-    for (let i = 0; i < n; i++ ){
-        answer.push(nToSecretMap(arr1[i] | arr2[i], n))
-    }
-    return answer;
+    return arr1.map((row1, idx) => nToSecretMap(row1 | arr2[idx], n));
 }
