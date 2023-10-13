@@ -1,17 +1,13 @@
 function solution(skill, skill_trees) {
-    var answer = 0;
-    skill_trees.forEach(ele => {
-        let isValid = true
-        let targetTree = skill.split('')
-        ele.split('').forEach(testSkill => {
-            if (targetTree[0] === testSkill){
-                targetTree.shift();
-            } else if (targetTree.includes(testSkill)){
-                isValid = false
-                return false
-            }
-        })
-        if (isValid) answer += 1
-    })
-    return answer;
+    const isCorrect = (target, test) => {
+        const targetArr = target.split('')
+        for (const ele of test.split('')){
+            if (targetArr.length === 0) return true
+            if (!targetArr.includes(ele)) continue
+            if (ele === targetArr.shift())  continue
+            return false
+        }
+        return true
+    }
+    return skill_trees.filter(ele => isCorrect(skill, ele)).length;
 }
