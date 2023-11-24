@@ -13,7 +13,7 @@ function solution(survey, choices) {
         else { personal_type[ele[1]] += choice - 4}
     });
     
-    [['R', 'T'], ['C', 'F'], ['J', 'M'], ['A', 'N']].forEach(([first, second])=> {
+    STATIC_PERSONAL.forEach(([first, second])=> {
         if (personal_type[first] < personal_type[second]){
             answer += second
         } else {
