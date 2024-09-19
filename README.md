@@ -4,4 +4,4 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 
 ## 사용 플랫폼
 
-- 프로그래머스.
+- 프로그래머스
